@@ -59,6 +59,7 @@ module.exports = function(app,rootdirectory,io){
            connections.push(socket);
            users.push(data);
            socket.emit('userSet', {username: data});
+           io.emit('newUser',data+' has entered into chat');
         } else {
            socket.emit('userExists', data + ' username is taken! Try some other username.');
         }
