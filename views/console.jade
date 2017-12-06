@@ -1,0 +1,120 @@
+doctype html
+html(lang='en')
+  head
+    meta(charset='utf-8')
+
+    title
+
+    meta(name='description', content='CONSOLE')
+
+    meta(name='author', content='Sayantan Khan')
+
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+
+    link(rel='stylesheet', href='src/css/sideNav.css')
+
+    link(rel='stylesheet', href='src/css/hovermessage.css')
+
+    link(rel='stylesheet', href='src/css/main.css')
+
+    link(rel='stylesheet', href='src/styleIcon/css/font-awesome.min.css')
+
+    link(rel='stylesheet', href='bower_components/bootstrap/dist/css/bootstrap.min.css')
+    // <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    script(src='bower_components/jquery/dist/jquery.min.js')
+    // <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    script(sec='bower_components/bootstrap/dist/js/bootstrap.min.js').
+    script(src='/socket.io/socket.io.js')
+    script(src='src/js/main.js')
+  body
+    .sidenav
+      a(href='#', data-toggle='tooltip', data-placement='top', title='DashBoard')
+        i.fa.fa-dashboard
+       &#x9;&#x9;
+      a(href='#', data-toggle='tooltip', data-placement='top', title='Mapper')
+        i.fa.fa-connectdevelop
+       &#x9;&#x9;
+      a(href='#', data-toggle='tooltip', data-placement='top', title='Query')
+        i.fa.fa-code
+
+      a(href='#', data-toggle='tooltip', data-placement='top', title='Database')
+        i.fa.fa-database
+
+      a(href='#', data-toggle='tooltip', data-placement='top', title='Visualization')
+        i.fa.fa-bar-chart
+
+      a(href='#', data-toggle='tooltip', data-placement='top', title='Monitoring')
+        i.fa.fa-heartbeat
+
+      .fabottom
+        a(href='#', data-toggle='tooltip', data-placement='top', title='User')
+          i.fa.fa-user-circle
+
+        a(href='#', data-toggle='tooltip', data-placement='top', title='Sign Out')
+          i.fa.fa-sign-out
+
+        a(href='#', data-toggle='tooltip', data-placement='top', title='Collapse')
+          i#collapse.fa.fa-chevron-right
+     &#x9;
+    .main
+      h2 Database Console
+
+      .row(style='margin-top:20px')
+        .col-md-3
+          .input-group
+            span#basic-addon3.input-group-addon Mongo-Url:
+
+            input#url.form-control(type='text', aria-describedby='basic-addon3', value=url, readonly='')
+
+        .col-md-2
+          .input-group
+            span#basic-addon3.input-group-addon Port No.
+
+            input#port.form-control(type='text', aria-describedby='basic-addon3', value=port, readonly='')
+
+        .col-md-2
+          .input-group
+            span#basic-addon3.input-group-addon DbName
+
+            input#dbname.form-control(type='text', aria-describedby='basic-addon3',value=database, readonly='' )
+
+        .col-md-3
+          .input-group
+            span#basic-addon3.input-group-addon Status*
+
+            input#status.form-control(type='text', aria-describedby='basic-addon3', value=connected, readonly='')
+
+        .main-section
+          .row.border-chat
+            .col-md-12.col-sm-12.col-xs-12.first-section
+              .row
+                .col-md-8.col-sm-6.col-xs-6.left-first-section
+                  p Chat
+                       &#x9;&#x9;&#x9;&#x9;
+                .col-md-4.col-sm-6.col-xs-6.right-first-section
+                  a(href='#')
+                    i.fa.fa-minus(aria-hidden='true')
+                         &#x9;&#x9;&#x9;&#x9;&#x9;
+                  a(href='#')
+                    i.fa.fa-clone(aria-hidden='true')
+                         &#x9;&#x9;&#x9;&#x9;&#x9;
+                  a#offchat(href='#')
+                    i.fa.fa-times(aria-hidden='true')
+                 &#x9;
+          .row.border-chat.chatboxdiv
+            .col-md-12.col-sm-12.col-xs-12.second-section
+              .chat-section
+                ul
+                  
+          .row.border-chat
+            .col-md-12.col-sm-12.col-xs-12.third-section
+              #userdetails.text-bar
+                input#usr(type='text', placeholder='Write Email Address', required='')
+                a#nameButton(href='#')
+                  i.fa.fa-arrow-right(aria-hidden='true')
+              |       &#x9;&#x9;&#x9;
+              #wchat.text-bar
+                form(action='/savechat', method='post')
+                  input#chatbox(type='text', placeholder='Write messege')
+                  a#sendmessage(href='#')
+                    i.fa.fa-arrow-right(aria-hidden='true')

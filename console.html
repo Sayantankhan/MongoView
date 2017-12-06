@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title></title>
+  <meta name="description" content="CONSOLE">
+  <meta name="author" content="Sayantan Khan">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="stylesheet" href="src\css\sideNav.css" />
+  <link rel="stylesheet" href="src\css\hovermessage.css" />
+  <link rel="stylesheet" href="src\css\main.css" />
+  <link rel="stylesheet" href="src\styleIcon\css\font-awesome.min.css" />
+  <link rel="stylesheet" href="bower_components\bootstrap\dist\css\bootstrap.min.css" />
+  <!--<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">-->
+
+  <script src="bower_components\jquery\dist\jquery.min.js"></script>
+  <!--<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>-->
+  <script sec="bower_components\bootstrap\dist\js\bootstrap.min.js"></script>
+  <script src="src\js\main.js"></script>
+
+</head>
+
+<body>
+	  <div class="sidenav">
+		  <a href="#" data-toggle="tooltip" data-placement="top" title="DashBoard"><i class="fa fa-dashboard"></i></a>
+		  <a href="#" data-toggle="tooltip" data-placement="top" title="Mapper"><i class="fa fa-connectdevelop" ></i></a>
+		  <a href="#" data-toggle="tooltip" data-placement="top" title="Query"><i class="fa fa-code "></i></a>
+      <a href="#" data-toggle="tooltip" data-placement="top" title="Database"><i class="fa fa-database " ></i></a>
+      <a href="#" data-toggle="tooltip" data-placement="top" title="Visualization"><i class="fa fa-bar-chart "></i></a>
+      <a href="#" data-toggle="tooltip" data-placement="top" title="Monitoring"><i class="fa fa-heartbeat "></i></a>
+      <div class="fabottom">
+        <a href="#" data-toggle="tooltip" data-placement="top" title="User"><i class="fa fa-user-circle" ></i></a>
+        <a href="#" data-toggle="tooltip" data-placement="top" title="Sign Out"><i class="fa fa-sign-out"></i></a>
+        <a href="#" data-toggle="tooltip" data-placement="top" title="Collapse"><i class="fa fa-chevron-right" id="collapse"></i></a>
+    </div>
+	</div>
+
+	<div class="main">
+	  <h2>Database Console</h2>
+    <div class="row" style="margin-top:20px">
+      <div class="col-md-3">
+        <div class="input-group">
+          <span class="input-group-addon" id="basic-addon3">Mongo-Url:</span>
+          <input type="text" class="form-control" id="url" aria-describedby="basic-addon3" placeholder="http://url:port" onfocus="this.placeholder = ''" onblur="this.placeholder = 'http://url:port'" >
+        </div>
+      </div>
+      <div class="col-md-2">
+        <div class="input-group">
+          <span class="input-group-addon" id="basic-addon3">Port No.</span>
+          <input type="text" class="form-control" id="port" aria-describedby="basic-addon3" placeholder="port" onfocus="this.placeholder = ''" onblur="this.placeholder = 'port'">
+        </div>
+      </div>
+      <div class="col-md-2">
+        <div class="input-group">
+          <span class="input-group-addon" id="basic-addon3">DbName</span>
+          <input type="text" class="form-control" id="dbname" aria-describedby="basic-addon3" placeholder="DbName" onfocus="this.placeholder = ''" onblur="this.placeholder = 'DbName'">
+        </div>
+      </div>
+
+      <div class="col-md-3">
+        <div class="input-group">
+          <span class="input-group-addon" id="basic-addon3">Status*</span>
+          <input type="text" class="form-control" id="status" aria-describedby="basic-addon3" value="not-connected" readonly>
+        </div>
+      </div>
+
+      <div class="main-section">
+      	<div class="row border-chat">
+      		<div class="col-md-12 col-sm-12 col-xs-12 first-section">
+      			<div class="row">
+      				<div class="col-md-8 col-sm-6 col-xs-6 left-first-section">
+      					<p>Chat</p>
+      				</div>
+      				<div class="col-md-4 col-sm-6 col-xs-6 right-first-section">
+      					<a href="#"><i class="fa fa-minus" aria-hidden="true"></i></a>
+      					<a href="#"><i class="fa fa-clone" aria-hidden="true"></i></a>
+      					<a href="#" id="offchat"><i class="fa fa-times" aria-hidden="true"></i></a>
+      				</div>
+      			</div>
+      		</div>
+      	</div>
+      	<div class="row border-chat chatboxdiv">
+      		<div class="col-md-12 col-sm-12 col-xs-12 second-section">
+      			<div class="chat-section" id="chatboxdiv">
+      				<ul>
+      					<li>
+      						<div class="left-chat">
+      							<p>Lorem ipsum dolor sit ameeserunt.
+      							</p>
+      							<span>2 min</span>
+      						</div>
+      					</li>
+      					<li>
+      						<div class="right-chat">
+      							<p>Lorem ipsum dolor sit ameeserunt.</p>
+      							<span>2 min</span>
+      						</div>
+      					</li>
+                <p>Lorem ipsum dolor sit ameeserunt.</p>
+      				</ul>
+      			</div>
+      		</div>
+      	</div>
+      	<div class="row border-chat">
+      		<div class="col-md-12 col-sm-12 col-xs-12 third-section">
+            <div class="text-bar" id="userdetails">
+            <input type="text" placeholder="Write Email Address" id="usr" placeholder="Enter Your Email" required><a href="#" id='nameButton'><i class="fa fa-arrow-right" aria-hidden="true"></i></a>
+          </div>
+      			<div class="text-bar" id="wchat">
+      				<form action="/savechat" method="post"><input type="text" placeholder="Write messege" id="chatbox"><a href="#" id='sendmessage'><i class="fa fa-arrow-right" aria-hidden="true"></i></a></form>
+      			</div>
+      		</div>
+      	</div>
+      </div>
+    </div>
+	</div>
+</body>
+</html>

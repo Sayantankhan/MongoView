@@ -1,0 +1,8 @@
+# ======================== NODE api Configuration ===========================
+# ---------------------------------- For Third Party Application -----------------------------------
+#
+mongodb_port: 27017
+mongodb_url: localhost:27017
+mongodb_database: sayantan
+#mongodb_user:
+#mongodb_password: 
