@@ -33,6 +33,7 @@ jQuery(document).ready(function(event){
 
         socket.on('userSet', function(data) {
            user_email = data.username;
+           $('ul').append("<p>"+ user_email+" has entered into the chat</p>");
            $("#wchat").css('display','block');
            $("#userdetails").css('display','none');
         });
