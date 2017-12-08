@@ -33,7 +33,7 @@ jQuery(document).ready(function(event){
 
         socket.on('userSet', function(data) {
            user_email = data.username;
-          // $('ul').append("<p>"+ user_email+" has entered into the chat</p>");
+           //$('ul').append("<p>"+ user_email+" has entered into the chat</p>");
            $("#wchat").css('display','block');
            $("#userdetails").css('display','none');
         });
@@ -49,12 +49,14 @@ jQuery(document).ready(function(event){
         socket.on('chat message', function(msg){
           //var match = myMessage.localeCompare(msg);
           var msgbody = msg.split(':@:@:');
-          var match = msgbody[0].localeCompare(user_email);
+          var name = msgbody[0].split('(');
+          var match = name[0].localeCompare(user_email);
           if(match == 0)
-            $('ul').append("<li><div class=\"left-chat\"><p><lorem>"+'<b>'+msgbody[0]+':</b>&nbsp;'+msgbody[1]+"</lorem></p></div></li>");
-          else
-            $('ul').append("<li><div class=\"right-chat\"><p><lorem>"+'<b>'+msgbody[0]+':</b>&nbsp;'+msgbody[1]+"</lorem></p></div></li>");
+            $('ul').append("<li><div class=\"left-chat\"><p><lorem>"+'<b>'+msgbody[0]+':</b><br/>'+msgbody[1]+"</lorem></p></div></li>");
+          else{
+            $('ul').append("<li><div class=\"right-chat\"><p><lorem>"+'<b>'+msgbody[0]+':</b><br/>'+msgbody[1]+"</lorem></p></div></li>");
             window.scrollTo(0,document.querySelector(".chatboxdiv").scrollHeight);
+          }
         });
 
         socket.on('chatend', function(msg){

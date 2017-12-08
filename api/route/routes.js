@@ -66,6 +66,18 @@ module.exports = function(app,rootdirectory,io){
     });
 
       socket.on('chat message', function(msg){
+        //console.log(msg);
+        var msgbody = msg.split(':@:@:');
+        var match = msgbody[0].toLowerCase().localeCompare('sayantan');
+        if(match == 0)
+        {
+              msgbody[0] = msgbody[0] +'(DEV)';
+        }
+        else{
+          msgbody[0] = msgbody[0] + '(MEMBER)';
+        }
+        msg = msgbody[0]+':@:@:'+msgbody[1];
+        //console.log(msg);
         io.emit('chat message', msg);
       });
 
